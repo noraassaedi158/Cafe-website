@@ -2,19 +2,49 @@
 <html>
     <head>
         <title>cafe name</title>
-
+         <link rel="stylesheet" href="main.css">
+         <style>
+            .title-menu{
+                   color: #563B2C;
+                   text-align:center;
+            }
+            .menu-items {
+                grid-template-columns: 1fr 1fr ;
+               display: grid;
+               gap: 5px;
+               background-color:#815C43;
+               padding: 7px;
+                   }
+             .item {
+                background-color: #E9D8C4;
+                color: white;
+                text-align: center;
+                border: 1px solid white;
+                color: #563B2C;
+                    } 
+         </style>
     </head>
     <body>
     <header>
-         <p> cafe name</p>
+        
+        <image src="Velora.png" height="200" width="250" class="logo"></image>
+       <nav class="nav">
+        <a href="home link" class="page">Home</a>
+        <a href="menuItems.html" class="page">Menu Items</a>
+        <a href="menu.html" class="page">Menu</a>
+        <a href="Recipe.html" class="page">Recipe</a>
+        <a href="about-us.html" class="page">About Us</a>
+        <a href="rate-us.html" class="page">Rate Us</a>
+        <a href="faq.html" class="page">FAQ</a>
+       </nav>
     </header>
-        <h2>menu items</h2>
-        <div class="menu items">
-            <div class="'item">coffees</div>
-            <div class="item">drinks</div>
+    <br>
+    <br>
+        <h2 class="title-menu">menu items</h2>
+        <div class="menu-items">
+            <div class="item"> <image src="coffee-item.jpg" height=40% width="20%"></image><div class="title"><h3>coffees</h3><p>Enjoy our coffee</p></div></div>
             <div class="item">sweets</div>
             <div class="item">savory</div>
-            <div class="item">pastry</div>
             <div class="item">Todays specials</div>
         </div>
              
