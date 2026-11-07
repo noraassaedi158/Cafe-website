@@ -1,0 +1,26 @@
+.nav { 
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+background-color:#E9D8C4;
+padding: 5px;
+align-items: Center;
+}
+.page {
+flex: 1;
+background-color:#E9D8C4;
+color: #563B2C;
+padding: 0.5px;
+margin: 0.5px;
+text-align:center;
+}
+body{
+    background-color: #E9D8C4;
+}
+p{
+    color: #563B2C;
+    text-align:center;
+}
+.logo{
+    display: block;
+    margin: auto; }
