@@ -28,6 +28,7 @@ border-radius: 10px;
     background-color:#a58a6c;
     transition: all 0.5s at-ease 0.10s;
     color: #3a271d;
+    transition: transform 0.5s ease;
 }
 body{
     background-color: #E9D8C4;
