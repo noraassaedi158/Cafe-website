@@ -2,17 +2,32 @@
 display: flex;
 justify-content: space-between;
 flex-direction: row;
-background-color:#E9D8C4;
-padding: 5px;
+background-color:#815C43;
+padding: 2px;
 align-items: Center;
+border-radius: 10px;
+font-weight:bold
 }
+.nav:hover{
+    background-color:rgb(122, 102, 79);
+    color: #3a271d;
+}
+
 .page {
 flex: 1;
 background-color:#E9D8C4;
 color: #563B2C;
 padding: 0.5px;
-margin: 0.5px;
+margin: 5px;
 text-align:center;
+align-items: Center;
+border-radius: 10px;
+}
+.page:hover {
+     transform:scale(1.1);
+    background-color:#a58a6c;
+    transition: all 0.5s at-ease 0.10s;
+    color: #3a271d;
 }
 body{
     background-color: #E9D8C4;
@@ -21,6 +36,13 @@ p{
     color: #563B2C;
     text-align:center;
 }
+p:hover{
+    font-size:10%;
+}
 .logo{
-    display: block;
-    margin: auto; }
+    display: block; /*turn image into block because inline you cant put it in the middle */
+    margin: auto; /*this makes it in the middle horizontally*/ }
+.logo:hover{
+    transform:rotate(360deg);
+    transition: transform 0.5s ease;
+}
