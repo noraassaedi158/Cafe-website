@@ -4,7 +4,22 @@
         <title>Valora cafe</title>
          <link rel="stylesheet" href="main.css">
          <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="icon" type="image/png" href="Velora.png">
          <style>
+            /* PHONE*/
+           @media (max-width: 767px) {
+                
+                  }
+
+                /* TABLET */
+            @media (min-width: 768px) and (max-width: 1023px) {
+                 
+                   }
+
+              /* LAPTOP / DESKTOP */
+             @media (min-width: 1024px) {
+                  
+               } 
             .title-menu{
                    color: #563B2C;
                    text-align:center;
@@ -16,7 +31,7 @@
                 color: #3a271d;
                 transition: transform 0.5s ease;
             }
-            .menu-items {
+            #menu-items {
                 grid-template-columns: 1fr 1fr ;
                display: grid;
                gap: 5px;
@@ -37,9 +52,8 @@
                 font-weight: bold;
                     } 
             .item:hover{
-                transform:scale(1.1);
+                transform:scale(1.019);
                 background-color:#a58a6c;
-                transition: all 2s at-ease 0.05s;
                 color: #3a271d;
                 transition: transform 0.5s ease;
                  border: 3px solid #563B2C;
@@ -47,8 +61,16 @@
              .item-footer{
                 background-color:#815C43;
                 font-weight:bold;
+                color: #a58a6c;
              }
-            item-link:link{
+             .item-footer:hover{
+                transform:scale(1.09);
+                background-color:#815C43;
+                color: #251a13;
+                transition: transform 0.5s ease;
+                
+             }
+        item:link{
                 color:#E9D8C4;
          }
          .image-item{
@@ -75,7 +97,7 @@
         <h2 class="title-menu">
             Menu Items
         </h2>
-        <div class="menu-items">
+        <div id="menu-items">
             <div class="item">
                  <image src="coffee-item.jpg" height=80% width="80%" class="image-item"></image>
                  <div class="card">
@@ -122,7 +144,7 @@
              
 
     <footer>
-           <p>© 2026 Café Name · Umm Al-Qura University</p>
+           <p>© 2026 Velora cafe · Umm Al-Qura University</p>
     </footer>
     </body>
 </html>
