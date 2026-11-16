@@ -1,60 +1,210 @@
-
 <!DOCTYPE html>
+<!-- faq.html -->
 <html>
-<header>
-    <title>cafe name-FAQ</title>
-    
+<head>
+    <title>Velora cafe - FAQ</title>
+
     <meta charset="UTF-8"> <!--بعرض الحروف العربية والانقلش والرموز بشكل صحيح-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--يخلي الصفحة تناسب مع احجام الشاشات-->
 
-    <link rel="icon" href="صورة للوقو">
+    <link rel="stylesheet" href="main.css"> 
+    <link rel="icon" type="image/png" href="cafe-images/Velora.png">
 
     <style>
+        /* الصفحة تظهر بنعومة لما تفتح (نفس باقي الصفحات) */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body {
+            animation: fadeIn 0.5s ease-in;
+        }
+        body.leaving {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
 
+        /* السكرول يوقف عند كل سؤال */
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            scroll-snap-align: start;
+        }
+
+        footer {
+            scroll-snap-align: end;
+        }
+
+        h1 {
+            text-align: center;
+            color: #563B2C;
+        }
+
+        p a {
+            color: #563B2C;
+            font-weight: bold;
+        }
+
+        /* كلمة FAQ يظهر معناها لما يمر عليها الماوس */
+        abbr {
+            text-decoration: none;
+            cursor: help;
+        }
+
+        #faq-list {
+            padding: 0 20px;
+        }
+
+        /* لون رقم السؤال */
+        #faq-list li::marker {
+            color: #563B2C;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        /* كل سؤال في كرت لحاله (نفس شكل كروت المنيو) */
+        .faq-item {
+            max-width: 600px;
+            margin: 30vh auto;
+            padding: 30px;
+            background-color: #c4a380;
+            border: 3px solid #563B2C;
+            border-radius: 10px;
+            scroll-snap-align: center;
+            transition: transform 0.5s ease;
+        }
+
+        /* لما يمر الماوس على السؤال يكبر */
+        .faq-item:hover {
+            transform: scale(1.05);
+            background-color: #a58a6c;
+        }
+
+        .faq-question {
+            color: #3a271d;
+        }
+
+        .faq-answer {
+            color: #563B2C;
+            line-height: 1.6;
+        }
+
+        .faq-answer a {
+            color: #E9D8C4;
+            font-weight: bold;
+        }
+
+        /* PHONE */
+        @media (max-width: 767px) {
+            .faq-item {
+                max-width: 85%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* TABLET */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .faq-item {
+                max-width: 75%;
+            }
+        }
     </style>
-</header>
+</head>
 
 <body>
 
     <header>
-        <img src="اللوقو" alt="cafe name">
+        <img src="cafe-images/Velora.png" height="200" width="250" class="logo" alt="Velora cafe">
+        <nav class="nav">
+            <a href="index.html" class="page">Home</a>
+            <a href="menuItems.html" class="page">Menu Items</a>
+            <a href="menu.html" class="page">Menu</a>
+            <a href="Recipe.html" class="page">Recipe</a>
+            <a href="about-us.html" class="page">About Us</a>
+            <a href="rate-us.html" class="page">Rate Us</a>
+            <a href="faq.html" class="page">FAQ</a>
+        </nav>
     </header>
 
-    <nav>
-        <a href="رابط الصفحة الرئيسية">Home</a>
-        <a href="رابط المنيو">Menu</a>
-        <a href="rate-us.html">Rate Us</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
-
     <main>
-        
-    <h1>Frequently Asked Questions</h1> <!--الاسئلة الشائعة-->
+
+        <h1><abbr title="Frequently Asked Questions">FAQ</abbr></h1> <!--الاسئلة الشائعة-->
 
         <ol id="faq-list">
 
-            <li class="faq-question">
-                    <p></p>
-              </li>
-            <li class="faq-question">
-                    <p></p>
-         </li>
-            <li class="faq-question">
-                    <p></p>
-         </li>
-            <li class="faq-question">
-                    <p></p>
-         </li>
-            <li class="faq-question">
-                    <p></p>
-        </li>
-    </ol>
+            <li class="faq-item">
+                <h3 class="faq-question">What are your opening hours?</h3>
+                <p class="faq-answer">We are open daily from 7:00 AM to 12:00 AM. Check the opening hours table on our home page for details.</p>
+            </li>
+
+            <li class="faq-item">
+                <h3 class="faq-question">Do you offer dairy-free milk?</h3>
+                <p class="faq-answer">Yes! We offer oat and almond milk for all our drinks at no extra cost.</p>
+            </li>
+
+            <li class="faq-item">
+                <h3 class="faq-question">Can I find the recipes of your drinks and desserts?</h3>
+                <p class="faq-answer">Yes, visit our <a href="Recipe.html">Recipe</a> page to try them at home.</p>
+            </li>
+
+            <li class="faq-item">
+                <h3 class="faq-question">Do you take orders for events?</h3>
+                <p class="faq-answer">Yes, we prepare coffee and dessert trays for events. Please contact us at least 3 days in advance.</p>
+            </li>
+
+            <li class="faq-item">
+                <h3 class="faq-question">How can I share my opinion about the café?</h3>
+                <p class="faq-answer">We'd love to hear from you! Visit our <a href="rate-us.html">Rate Us</a> page and leave your review.</p>
+            </li>
+
+        </ol>
 
     </main>
 
-<footer>
-      <p>©️ 2026 Café Name · Umm Al-Qura University</p>
+    <p><a href="index.html">Back to Home</a></p>
+
+    <footer>
+        <p>© 2026 Velora cafe · Umm Al-Qura University</p>
     </footer>
+
+    <!-- آخر صفحة: السكرول في النهاية يرجعك للصفحة الأولى -->
+    <script>
+        let canLeave = false;
+        let startY = 0;
+
+        function atBottom() {
+            return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        }
+
+        function goNext() {
+            document.body.classList.add("leaving");
+            setTimeout(function () { location.href = "index.html"; }, 500);
+        }
+
+        window.onscroll = function () {
+            canLeave = false;
+            if (atBottom()) {
+                setTimeout(function () { canLeave = atBottom(); }, 700);
+            }
+        };
+        window.onload = window.onscroll;
+
+        window.onwheel = function (e) {
+            if (canLeave && e.deltaY > 0) goNext();
+        };
+        window.ontouchstart = function (e) {
+            startY = e.touches[0].clientY;
+        };
+        window.ontouchend = function (e) {
+            if (canLeave && startY - e.changedTouches[0].clientY > 60) goNext();
+        };
+    </script>
 
 </body>
 </html>
