@@ -1,64 +1,254 @@
-
 <!DOCTYPE html>
+<!-- rate-us.html -->
 <html>
 <head>
-    <title>cafe name - Rate Us</title>
+    <title>Velora cafe - Rate Us</title>
 
     <meta charset="UTF-8"> <!--بعرض الحروف العربية والانقلش والرموز بشكل صحيح-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--يخلي الصفحة تناسب مع احجام الشاشات-->
 
-    <link rel="icon" href="صورة للوقو">
+    <link rel="stylesheet" href="main.css"> <!--الـ CSS المشترك للفريق-->
+    <link rel="icon" type="image/png" href="cafe-images/Velora.png">
 
     <style>
-        
+        /* الصفحة تظهر بنعومة لما تفتح (نفس باقي الصفحات) */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        body {
+            animation: fadeIn 0.5s ease-in;
+        }
+        body.leaving {
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        /* السكرول يوقف عند كل سؤال */
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            scroll-snap-align: start;
+        }
+
+        footer {
+            scroll-snap-align: end;
+        }
+
+        h1 {
+            text-align: center;
+            color: #563B2C;
+        }
+
+        p a {
+            color: #563B2C;
+            font-weight: bold;
+        }
+
+        /* كل سؤال في كرت لحاله (نفس شكل كروت المنيو) */
+        .question {
+            max-width: 500px;
+            margin: 30vh auto;
+            padding: 30px;
+            background-color: #c4a380;
+            border: 3px solid #563B2C;
+            border-radius: 10px;
+            color: #563B2C;
+            font-weight: bold;
+            scroll-snap-align: center;
+            transition: transform 0.5s ease;
+        }
+
+        /* لما يمر الماوس على السؤال يكبر */
+        .question:hover {
+            transform: scale(1.05);
+            background-color: #a58a6c;
+        }
+
+        #review-form input[type="text"],
+        #review-form input[type="email"],
+        #review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #E9D8C4;
+            border: 2px solid #815C43;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        #review-form input[type="submit"] {
+            margin-top: 15px;
+            padding: 10px 25px;
+            background-color: #563B2C;
+            color: #E9D8C4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+
+        #review-form input[type="submit"]:hover {
+            background-color: #815C43;
+        }
+
+        /* رسالة التحقق من الفورم */
+        #form-message.error {
+            color: #B85B56;
+        }
+
+        #form-message.success {
+            color: #3a271d;
+        }
+
+        /* PHONE */
+        @media (max-width: 767px) {
+            .question {
+                max-width: 90%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* TABLET */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .question {
+                max-width: 75%;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <img src="اللوقو" alt="cafe name">
+        <img src="cafe-images/Velora.png" height="200" width="250" class="logo" alt="Velora cafe">
+        <nav class="nav">
+            <a href="index.html" class="page">Home</a>
+            <a href="menuItems.html" class="page">Menu Items</a>
+            <a href="menu.html" class="page">Menu</a>
+            <a href="Recipe.html" class="page">Recipe</a>
+            <a href="about-us.html" class="page">About Us</a>
+            <a href="rate-us.html" class="page">Rate Us</a>
+            <a href="faq.html" class="page">FAQ</a>
+        </nav>
     </header>
-
-    <nav>
-        <a href="رابط الصفحة الرئيسية">Home</a>
-        <a href="رابط المنيو">Menu</a>
-        <a href="rate-us.html">Rate Us</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
 
     <main>
 
         <h1>Rate Us</h1>
 
-        <form id="review-form">
+        <!-- novalidate: نخلي التحقق على JavaScript بدل المتصفح -->
+        <form id="review-form" novalidate>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+            <div class="question">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
+            <div class="question">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
 
-            <label>Rating:</label> <!--التقييم-->
+            <div class="question">
+                <p>Rating:</p>
+                <input type="radio" id="r1" name="rating" value="1" required><label for="r1">★</label>
+                <input type="radio" id="r2" name="rating" value="2"><label for="r2">★★</label>
+                <input type="radio" id="r3" name="rating" value="3"><label for="r3">★★★</label>
+                <input type="radio" id="r4" name="rating" value="4"><label for="r4">★★★★</label>
+                <input type="radio" id="r5" name="rating" value="5"><label for="r5">★★★★★</label>
+            </div>
 
-            <input type="radio" name="rating" value="1">
-            <input type="radio" name="rating" value="2">
-            <input type="radio" name="rating" value="3">
-            <input type="radio" name="rating" value="4">
-            <input type="radio" name="rating" value="5">
-
-            <label for="feedback">Feedback:</label><!--المراجعات-->
-            <textarea id="feedback" name="feedback"></textarea>
-
-            <input type="submit" value="Submit"> <!--زر الارسال-->
+            <div class="question">
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" required></textarea>
+                <input type="submit" value="Submit">
+                <p id="form-message"></p>
+            </div>
 
         </form>
 
     </main>
 
-<footer>
-      <p>©️ 2026 Café Name · Umm Al-Qura University</p>
+    <p><a href="faq.html">Next: FAQ</a></p>
+
+    <footer>
+        <p>© 2026 Velora cafe · Umm Al-Qura University</p>
     </footer>
+
+    <script>
+        // ===== التحقق من الفورم =====
+        document.getElementById("review-form").onsubmit = function (e) {
+            e.preventDefault(); // نوقف الإرسال لين نتأكد من البيانات
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let rating = document.querySelector('input[name="rating"]:checked');
+            let feedback = document.getElementById("feedback").value.trim();
+            let message = document.getElementById("form-message");
+
+            // شكل الإيميل الصحيح: شي@شي.شي
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (name === "") {
+                message.textContent = "Please enter your name.";
+                message.className = "error";
+            } else if (email === "") {
+                message.textContent = "Please enter your email.";
+                message.className = "error";
+            } else if (!emailPattern.test(email)) {
+                message.textContent = "Please enter a valid email, like name@example.com";
+                message.className = "error";
+            } else if (rating === null) {
+                message.textContent = "Please choose a rating.";
+                message.className = "error";
+            } else if (feedback === "") {
+                message.textContent = "Please write your feedback.";
+                message.className = "error";
+            } else {
+                message.textContent = "Thank you, " + name + "! Your review has been sent.";
+                message.className = "success";
+                this.reset(); // يفضي الفورم
+            }
+        };
+
+        // ===== في آخر الصفحة، السكرول ينقلك لصفحة FAQ (نفس كود باقي الصفحات) =====
+        let canLeave = false;
+        let startY = 0;
+
+        function atBottom() {
+            return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        }
+
+        function goNext() {
+            document.body.classList.add("leaving");
+            setTimeout(function () { location.href = "faq.html"; }, 500);
+        }
+
+        window.onscroll = function () {
+            canLeave = false;
+            if (atBottom()) {
+                setTimeout(function () { canLeave = atBottom(); }, 700);
+            }
+        };
+        window.onload = window.onscroll;
+
+        window.onwheel = function (e) {
+            if (canLeave && e.deltaY > 0) goNext();
+        };
+        window.ontouchstart = function (e) {
+            startY = e.touches[0].clientY;
+        };
+        window.ontouchend = function (e) {
+            if (canLeave && startY - e.changedTouches[0].clientY > 60) goNext();
+        };
+    </script>
 
 </body>
 </html>
