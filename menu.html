@@ -515,5 +515,37 @@ border-radius: 10px;
     <footer>
       <p>© 2026 Valora · Umm Al-Qura University</p>
     </footer>
+     <script>
+        let canLeave = false;
+        let startY = 0;
+
+        function atBottom() {
+            return window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+        }
+
+        function goNext() {
+            document.body.classList.add("Recipe");
+            setTimeout(function () { location.href = "Recipe.html"; }, 500);
+        }
+
+        window.onscroll = function () {
+            canLeave = false;
+            if (atBottom()) {
+                setTimeout(function () { canLeave = atBottom(); }, 700);
+            }
+        };
+        window.onload = window.onscroll;
+
+        window.onwheel = function (e) {
+            if (canLeave && e.deltaY > 0) goNext();
+        };
+        window.ontouchstart = function (e) {
+            startY = e.touches[0].clientY;
+        };
+        window.ontouchend = function (e) {
+            if (canLeave && startY - e.changedTouches[0].clientY > 60) goNext();
+        };
+    </script>
+
 </body>
 </html>
