@@ -57,7 +57,18 @@
 img{
 border-radius: 10px;
 }
-  
+td, th{
+    transition: box-shadow 0.3s ease;
+}
+td:hover, th:hover {
+   
+     box-shadow: 0 12px 12px #0002;
+    background-color:#E9D8C4;
+    
+}
+ .menu:hover{
+    transform:scale(1.1);
+  transition: transform 0.5s ease;}
 
 </style>
 </head>
@@ -80,9 +91,9 @@ border-radius: 10px;
     <th>Size</th>
     <th>Price</th>
 <tr class="Coffee">
-        <td>
+        <td class="menu">
          <div>
-         <image src=cafe-images/Espresso.jpeg  width=300px; height= 280px;></image>
+         <image src=cafe-images/Espresso.jpeg  width=300px; height= 280px; ></image>
          </div>
        Espresso
    </td>
@@ -108,8 +119,8 @@ border-radius: 10px;
     </td>
     </tr>
 <tr class="Coffee">
-        <td><div>
-         <image src=cafe-images/Cappuccino.jpeg  width=300px; height= 310px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/Cappuccino.jpeg  width=300px; height= 310px; ></image>
          </div>
          Cappuccino</td>
         <td>
@@ -134,8 +145,8 @@ border-radius: 10px;
     </td>
     </tr>
     <tr class="Coffee">
-        <td><div>
-         <image src=cafe-images/latte.jpeg  width=300px; height= 340px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/latte.jpeg  width=300px; height= 340px; ></image>
          </div>Latte</td>
         <td>
        <div>
@@ -159,8 +170,8 @@ border-radius: 10px;
     </td>
     </tr>
     <tr class="Coffee">
-        <td><div>
-         <image src=cafe-images/flat-white.jpeg  width=300px; height= 300px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/flat-white.jpeg  width=300px; height= 300px; ></image>
          </div>Flat White</td>
         <td>
         <div>
@@ -185,8 +196,8 @@ border-radius: 10px;
 
     </tr>
     <tr class="Coffee">
-        <td><div>
-         <image src=cafe-images/Americano.jpeg  width=300px; height= 340px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/Americano.jpeg  width=300px; height= 340px; ></image>
          </div>Americano</td>
         <td>
         <div>
@@ -210,8 +221,8 @@ border-radius: 10px;
     </td>
 </tr>
  <tr class="Coffee">
-        <td><div>
-         <image src=cafe-images/Mocha.jpeg  width=300px; height= 270px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/Mocha.jpeg  width=300px; height= 270px; ></image>
          </div>Mocha</td>
         <td>
         <div>
@@ -235,7 +246,7 @@ border-radius: 10px;
     </td>
 </tr>
  <tr class="Coffee">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/ice-coffee.jpeg  width=300px; height= 280px;></image>
          </div>Iced coffee</td>
         <td>
@@ -260,8 +271,8 @@ border-radius: 10px;
     </td>
 </tr>
  <tr class="Coffee">
-        <td><div>
-         <image src=cafe-images/matcha.jpeg  width=300px; height= 320px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/matcha.jpeg  width=300px; height= 320px; ></image>
          </div>Matcha</td>
         <td>
         <div>
@@ -287,13 +298,13 @@ border-radius: 10px;
 </table>
 <br>
 <p> Valores specials </p>
-<table id="Specials">
+<table id="specials">
     <th>Special</th>
     <th>Size</th>
     <th>Price</th>
 <tr class="special">
-        <td><div>
-         <image src=cafe-images/Rose-Latte.jpeg  width=300px; height= 280px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/Rose-Latte.jpeg  width=300px; height= 280px; ></image>
          </div>Rose Latte</td>
         <td><div>
          <button>
@@ -316,8 +327,8 @@ border-radius: 10px;
     </td>
     </tr>
 <tr class="special">
-        <td><div>
-         <image src=cafe-images/pistashio-latte.jpeg  width=300px; height= 340px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/pistashio-latte.jpeg  width=300px; height= 340px; ></image>
          </div>Pistachio Latte</td>
         <td>
         <div>
@@ -341,8 +352,8 @@ border-radius: 10px;
     </td>
     </tr>
     <tr class="special">
-        <td><div>
-         <image src=cafe-images/hazelnut-latte.jpeg  width=300px; height= 280px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/hazelnut-latte.jpeg  width=300px; height= 280px; ></image>
          </div>Hazelnut Latte</td>
         <td>
         <div>
@@ -366,7 +377,7 @@ border-radius: 10px;
     </td>
     </tr>
     <tr class="special">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/white-mocha.jpeg  width=300px; height= 280px;></image>
          </div>White Mocha</td>
         <td>
@@ -395,27 +406,27 @@ border-radius: 10px;
 </table>
 <br>
 <p> Savory </p>
-<table id="Savorys">
+<table id="savorys">
     <th>Special</th>
     <th>Price</th>
 <tr class="Savory">
-        <td><div>
-         <image src=cafe-images/chicken-pesto-panani.jpeg  width=300px; height= 280px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/chicken-pesto-panani.jpeg  width=300px; height= 280px; ></image>
          </div>Chicken Pesto Panani</td>
     <td>
         15$
     </td>
     </tr>
 <tr class="Savory">
-        <td><div>
-         <image src=cafe-images/avocado-toast.jpeg  width=300px; height= 280px;></image>
+        <td class="menu"><div>
+         <image src=cafe-images/avocado-toast.jpeg  width=300px; height= 280px; ></image>
          </div>Avocado Toast</td>
     <td>
         20$
     </td>
     </tr>
     <tr class="Savory">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/Grilled-Halloumi-Sandwich.jpeg  width=300px; height= 340px;></image>
          </div>Grilled Halloumi Sandwich</td>
     <td>
@@ -424,7 +435,7 @@ border-radius: 10px;
 
     </tr>
     <tr class="Savory">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/Spinach-And-Feta-Pastery.jpeg  width=300px; height= 340px;></image>
          </div>Spinach And Feta Pastery</td>
     <td>
@@ -433,7 +444,7 @@ border-radius: 10px;
 
     </tr>
     <tr class="Savory">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/mini-margherita-pizza.jpg  width=300px; height= 340px;></image>
          </div>Mini Margherita Pizza</td>
     <td>
@@ -445,11 +456,11 @@ border-radius: 10px;
 </table>
 <br>
 <p> Desserts </p>
-<table id="Desserts">
+<table id="desserts">
     <th>Dessert</th>
     <th>Price</th>
 <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/cheesecake.jpeg  width=300px; height= 340px;></image>
          </div>Cheese Cake</td>
     <td>
@@ -457,7 +468,7 @@ border-radius: 10px;
     </td>
     </tr>
 <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/brownie.jpeg  width=300px; height= 340px;></image>
          </div>Chocolate Brownie</td>
     <td>
@@ -465,7 +476,7 @@ border-radius: 10px;
     </td>
     </tr>
     <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/cinniman-roll.jpeg  width=300px; height= 340px;></image>
          </div>cinnamon Rolls</td>
     <td>
@@ -473,7 +484,7 @@ border-radius: 10px;
     </td>
     </tr>
     <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/tiramisu.jpeg  width=300px; height= 340px;></image>
          </div>Tiramisu</td>
     <td>
@@ -482,7 +493,7 @@ border-radius: 10px;
 
     </tr>
     <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/cookies.jpeg  width=300px; height= 300px;></image>
          </div>Cookies</td>
     <td>
@@ -491,7 +502,7 @@ border-radius: 10px;
 
     </tr>
     <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/fruit-tart.jpeg  width=300px; height= 340px;></image>
          </div>Mini Fruit Tart</td>
     <td>
@@ -500,7 +511,7 @@ border-radius: 10px;
 
     </tr>
     <tr class="Dessert">
-        <td><div>
+        <td class="menu"><div>
          <image src=cafe-images/chocolate-strawberry.jpeg  width=300px; height= 320px;></image>
          </div>Chocolate Dipped Strawberry</td>
     <td>
