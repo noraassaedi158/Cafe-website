@@ -1,16 +1,14 @@
-.nav { 
-display: flex;
-justify-content: space-between;
-flex-direction: row;
-background-color:#815C43;
-padding: 2px;
-align-items: Center;
-border-radius: 10px;
-font-weight:bold
-}
-.nav:hover{
-    background-color: #563B2C;
-    color: #3a271d;
+.nav{
+      display: flex;
+      background-color:#815C43;
+      padding: 2px;
+      border-radius: 10px;
+      font-weight:bold
+ }
+ body{
+    background-color: #E9D8C4;
+    
+     
 }
 .page {
 flex: 1;
@@ -23,24 +21,13 @@ align-items: Center;
 border-radius: 10px;
 
 }
-.page:hover {
-     transform:scale(1.1);
-    background-color:#a58a6c;
-    transition: all 0.5s at-ease 0.10s;
-    color: #3a271d;
-    transition: transform 0.5s ease;
-}
-body{
-    background-color: #E9D8C4;
-     border: 10px solid #563B2C;
-     border-radius:20px;
-     
-}
+
+
 body::before {
   content: "";
   position: fixed;
   inset: -20px;               
-  background: url("Velora.png") no-repeat center;
+  background: url("cafe-images/Velora.png") no-repeat center;
   filter: blur(10px);
   opacity: 0.3;          
   z-index: -1;                
@@ -49,13 +36,68 @@ p{
     color: #563B2C;
     text-align:center;
 }
-p:hover{
-    font-size:10%;
-}
+
 .logo{
     display: block; /*turn image into block because inline you cant put it in the middle */
     margin: auto; /*this makes it in the middle horizontally*/ }
-.logo:hover{
-    transform:rotate(360deg);
-    transition: transform 0.5s ease;
-}
+
+           @media (max-width: 767px) {
+            
+                .nav{
+                    flex-direction: column;
+                    display:none;
+                }
+                .phone-burger{
+                    display:block;
+                    
+                }
+                body{
+                     
+                      border: 6px solid #563B2C;
+                      border-radius:20px;
+     
+                    }
+                
+                  }
+
+        
+
+              /* LAPTOP / DESKTOP */
+             @media (min-width: 768px){
+                .phone-burger
+                {
+                    display:none;
+                }
+                .nav { 
+                    justify-content: space-between;
+                    flex-direction: row;
+                    align-items: Center;
+                      
+                } 
+                body{
+                               
+                    border: 10px solid #563B2C;
+                    border-radius:20px;
+     
+                }
+                .nav:hover{
+                    background-color: #563B2C;
+                    color: #3a271d;
+                }
+                .page:hover {
+                    transform:scale(1.1);
+                    background-color:#a58a6c;
+                    transition: all 0.5s at-ease 0.10s;
+                    color: #3a271d;
+                    transition: transform 0.5s ease;
+                            }
+                p:hover{
+                    font-size:10%;
+                        }
+                .logo:hover{
+                    transform:rotate(360deg);
+                    transition: transform 0.5s ease;
+                                                    }
+               } 
+
+
