@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Valora cafe  - Menu Item </title>
+        <title>Valora cafe</title>
          <link rel="stylesheet" href="main.css">
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <link rel="icon" type="image/png" href="cafe-images/Velora.png">
@@ -85,6 +85,14 @@
     </head>
     <body>
     <header>
+         <div class="slideShow">
+        <ul class="slide">
+            <li id="slideOne"><img src= cafe-images/slideshow1.png  ></li>
+             <li id="slideTwo"><img src= cafe-images/slideshow2.png ></li>
+              <li id="slideThree"><img src= cafe-images/slideshow3.png></li>
+             <li id="slideFour"><img src= cafe-images/slideshow4.png ></li>
+        </ul>  
+        </div>
         <image src="cafe-images/Minimalist Hamburger Menu Icon.png" class="phone-burger" hieght="20%" width="20%"></image>
         <image src="cafe-images/Velora.png" height="200" width="250" class="logo"></image>
        <nav class="nav">
@@ -153,6 +161,16 @@
            <p>© 2026 Velora cafe · Umm Al-Qura University</p>
     </footer>
     <script>
+         let images=document.querySelectorAll(".slide img")
+        let currentIndex = 0;
+        images[currentIndex].classList.add("active");
+        function slidess(){
+            images[currentIndex].classList.remove("active")
+              currentIndex = (currentIndex + 1) % images.length;
+                 images[currentIndex].classList.add("active")
+        }
+         
+        setInterval(slidess, 3000);
         let canLeave = false;
         let startY = 0;
 
@@ -184,4 +202,4 @@
         };
     </script>
     </body>
-</html>
+</html>`    `
