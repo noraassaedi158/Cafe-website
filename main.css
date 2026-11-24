@@ -17,11 +17,43 @@ color: #563B2C;
 padding: 0.5px;
 margin: 5px;
 text-align:center;
-align-items: Center;
 border-radius: 10px;
 
 }
+.slideShow{
 
+ 
+  z-index: 2;
+  display: flex;
+    justify-content: center;
+    align-items: center; 
+   
+}
+.slide{
+      display: grid;
+      
+       width: 100%;
+       list-style: none;
+}
+.slide li{
+    grid-area: 1 / 1;
+    
+}
+.slide img{
+  
+     opacity: 0;
+     transition: opacity 1s ease-in-out;
+}
+.slide img.active{
+    
+    opacity: 1;
+}
+li img{
+    
+    object-fit: cover;
+    border-radius: 40px;
+    width:100%
+}
 
 body::before {
   content: "";
@@ -40,7 +72,7 @@ p{
 .logo{
     display: block; /*turn image into block because inline you cant put it in the middle */
     margin: auto; /*this makes it in the middle horizontally*/ }
-
+ 
            @media (max-width: 767px) {
             
                 .nav{
@@ -57,7 +89,14 @@ p{
                       border-radius:20px;
      
                     }
-                
+                .nav.active{
+                    display:flex;
+                }
+                .page{
+                      display: flex;
+                      flex-direction: row;
+                      gap: 1rem;
+                }
                   }
 
         
@@ -84,6 +123,13 @@ p{
                     background-color: #563B2C;
                     color: #3a271d;
                 }
+                .page {
+                   
+                    
+                    align-items: Center;
+                    
+
+                     }
                 .page:hover {
                     transform:scale(1.1);
                     background-color:#a58a6c;
