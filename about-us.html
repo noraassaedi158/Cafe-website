@@ -100,6 +100,14 @@
     </head>
     <body>
         <header>
+             <div class="slideShow">
+        <ul class="slide">
+            <li id="slideOne"><img src= cafe-images/slideshow1.png  ></li>
+             <li id="slideTwo"><img src= cafe-images/slideshow2.png ></li>
+              <li id="slideThree"><img src= cafe-images/slideshow3.png></li>
+             <li id="slideFour"><img src= cafe-images/slideshow4.png ></li>
+        </ul>  
+        </div>
              <image src="cafe-images/Minimalist Hamburger Menu Icon.png" class="phone-burger" hieght="20%" width="20%"></image>
             <img src="cafe-images/Velora.png" height="200" width="250" class="logo" alt="VELORA logo">
             <nav class="nav">
@@ -152,6 +160,16 @@
         <!-- Needed for the note "on scroll, at the end of the page go to the next page".
              HTML and CSS alone cannot do this. Delete this script if JavaScript is not allowed. -->
         <script>
+             let images=document.querySelectorAll(".slide img")
+        let currentIndex = 0;
+        images[currentIndex].classList.add("active");
+        function slidess(){
+            images[currentIndex].classList.remove("active")
+              currentIndex = (currentIndex + 1) % images.length;
+                 images[currentIndex].classList.add("active")
+        }
+         
+        setInterval(slidess, 3000);
             let canLeave = false;
             let startY = 0;
 
